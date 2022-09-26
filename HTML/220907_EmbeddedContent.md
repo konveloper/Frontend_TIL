@@ -54,33 +54,29 @@ alt="test">
 견고하게 마크업을 제대로 하면 figure+figcaption
 생산성 중시해서 다 이미지 처리한다고 할 수도 있다 
 
-크로스브라우징 기법 **점진적 향상기법**
-브라우저 지원하는 포맷인지 탐색->안되면 다음 소스.... -> 최후 이미지
+크로스브라우징 기법 **점진적 향상기법** (브라우저 지원하는 포맷인지 탐색->안되면 다음 소스.... -> 최후 이미지)
 
 `<iframe>`
-iframe은 현재 HTML 페이지에서 또 다른 HTML 페이지를 보여주고 싶을 때 사용합니다. iframe은 width 혹은 height 속성으로 크기를 조절합니다. 따로 값을 설정하지 않는다면 height는 150px, width는 300px을 기본값으로 합니다.
+현재 HTML 페이지에서 또 다른 HTML 페이지를 보여주고 싶을 때. iframe은 width 혹은 height 속성으로 크기를 조절. 따로 값을 설정하지 않는다면 height는 150px, width는 300px을 기본값.
 ```
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/orf9ailzXvI" title="[코테준비] N시간만에 끝내는 Python 코딩테스트(2018-2021년) 풀영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ```
 
 `<iframe>http://www.naver.com/</iframe>`
 
-접속 안 뜰 때가 많아용 iframe 보통 막아놓습니다
-user->해커 ->iframe->NAVER
-MITM(중간자 공격) 으로 많이 써먹거든요
-그래서 방어법 1.유저인증 2.유저 접속 지역 설정 3.iframe 같은 태그 지원X 
-사용자가 입력한 아이프레임은 방어하는 게 맞음 !!
+접속 안 뜰 때가 많은데 iframe은 보통 막아놓는다<br>
+user->해커 ->iframe->NAVER<br>
+MITM(중간자 공격) 으로 많이 쓰기 때문에 방어법 1.유저인증 2.유저 접속 지역 설정 3.iframe 같은 태그 지원X <br>
+사용자가 입력한 아이프레임은 방어하는 게 맞다<br>
 
 `<video>`
-배너 영상으로도 재생시킬 수 있는데 유튜브로 재생시키는 게 효율적 비디오 mp4 안 된다
-트래픽 때문에! 
-none 비디오 로딩 ㄴㄴ 페이지 로딩 빠름
-auto 로딩하고 바로 영상 재생
-metadata 로딩만 해두기
-사용자가 눌렀을 때만 보여주게 하려면 옵션값 설정
-poster 포스터 미리 걸어놓고 로딩된 척 .... 할 수도 있다 ..... 로딩 중일때 대신 보여줄 이미지 설정
+배너 등에서 영상을 재생시킬 수 있는데 유튜브로 재생시키는 게 효율적이고, 비디오 mp4는 트래픽 때문에 지양
+none 비디오 로딩 되지 않고 페이지 로딩 빠름<br>
+auto 로딩하고 바로 영상 재생<br>
+metadata 로딩만 해두기<br>
+사용자가 눌렀을 때만 보여주게 하려면 옵션값 설정<br>
+poster 포스터 미리 걸어놓고 로딩된 척 할 수도 있다 로딩 중일때 대신 보여줄 이미지 설정<br>
 
-사용자가 90퍼 이상인 브라우저가 뭔지 판단해서 그런 것만 마크업 .. 모든 브라우저 못해준다
-
-https://developer.mozilla.org/ko/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images
-결론부터 얘기해드리자면 해상도에 따라 '다른 이미지'를 보여주고 싶을 때에는 picture를, 같은 이미지인데 해상도에 따라 더 높은 해상도 이미지를 보여주고 싶을 때에는 srcset을 사용합니다.
+참고:
+https://developer.mozilla.org/ko/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images<br>
+해상도에 따라 '다른 이미지'를 보여주고 싶을 때에는 picture를, 같은 이미지인데 해상도에 따라 더 높은 해상도 이미지를 보여주고 싶을 때에는 srcset을 사용합니다.
