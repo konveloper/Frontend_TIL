@@ -49,7 +49,7 @@ body
 @import "mixin";
 @import "variables";
 ```
-_헤더, _메인, _변수, .... 언더바로 시작하는 각 scss 파일들 -> 언더바가 없는 style.scss 하나에 합쳐준다 -> import해서 컴파일하면 style.css 파일로 만들어준다 (주의: 파일에는 _가 붙지만 import 할 때에는 _를 붙이지 않는다)
+_헤더, _메인, _변수, .... 언더바로 시작하는 각 scss 파일들 -> 언더바가 없는 style.scss 하나에 합쳐준다 -> import해서 컴파일하면 style.css 만들어준다 (주의: 파일에는 _가 붙지만 import 할 때에는 _를 붙이지 않는다)
 
 ### 주석 (파일 001_주석과nesting 참고)
 한 줄 주석은 sass 내에서만 볼 수 있다. 여러 줄 주석은 scss파일이 컴파일 될 때 주석 내용이 css 파일에 나타난다.
