@@ -1,0 +1,43 @@
+@mixin flexCenter{
+	display: flex;
+	justify-content : center;
+	align-items : center;
+    list-style: none;
+}
+
+@mixin flexCenterTwo($size: 30px){
+	display: flex;
+	justify-content : center;
+	align-items : center;
+    list-style: none;
+    li{
+        margin-right: $size;
+    }
+    @content
+}
+
+.one{
+	@include flexCenterTwo(10px);
+    background-color: aqua;
+    //li{
+    //    margin-right: 10px;
+    //}
+}
+
+.two{
+	@include flexCenterTwo(20px); 
+    background-color: chocolate;
+    //li{
+    //    margin-right: 20px;
+    //}
+}
+
+.three{
+	@include flexCenterTwo{
+        color:white;
+    }; 
+    background-color: chocolate;
+    //li{
+    //    margin-right: 20px;
+    //}
+}

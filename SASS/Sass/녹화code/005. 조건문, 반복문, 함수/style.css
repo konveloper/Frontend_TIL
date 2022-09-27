@@ -1,0 +1,101 @@
+.square-av {
+  width: 100px;
+  height: 100px;
+}
+
+.circle-av {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.banner {
+  background-color: #f2ece4;
+  color: #036;
+}
+
+body.dark .banner {
+  background-color: #6b717f;
+  color: #d2e1dd;
+}
+
+.next {
+  height: 0;
+  width: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 2.5px;
+  border-left-color: black;
+}
+
+.test1 {
+  background-image: url("../assets/phoster1.png");
+}
+
+.test2 {
+  background-image: url("../assets/phoster2.png");
+}
+
+.test3 {
+  background-image: url("../assets/phoster3.png");
+}
+
+.test4 {
+  background-image: url("../assets/phoster4.png");
+}
+
+.test5 {
+  background-image: url("../assets/phoster5.png");
+}
+
+.icon-#dad5d2 {
+  background: #dad5d2;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.icon-#3a3532 {
+  background: #3a3532;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.icon-#375945 {
+  background: #375945;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.icon-#5b8767 {
+  background: #5b8767;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.icon-#a6c198 {
+  background: #a6c198;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.icon-#dbdfc8 {
+  background: #dbdfc8;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.sup {
+  font-size: 7.63964px;
+}
+
+.sidebar {
+  float: left;
+  margin-left: 64px;
+}
+/*# sourceMappingURL=style.css.map */

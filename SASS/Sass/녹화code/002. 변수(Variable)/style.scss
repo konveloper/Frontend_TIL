@@ -1,0 +1,20 @@
+$bgColor : red;
+$font-h1 : 28px;
+$valid-sides: left, center, right;
+$font-sizes: ("myh1": 45px, "myh2": 19px, "myp": 16px);
+
+h1{
+    $spanColor: blue; // 지역변수
+    color: $bgColor;
+    //font-size: $bgColor;
+    font-size: map-get($font-sizes, "myp") * 2;
+    span{
+        color: $spanColor;
+    }
+}
+
+
+p{
+    //color: $spanColor; // 지역변수이기 때문에 사용 불가
+	text-align : nth($valid-sides, -2);
+}
