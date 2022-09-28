@@ -1,0 +1,13 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: gray;
+}
+
+.aside {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: white;
+}/*# sourceMappingURL=013_mixmin.css.map */

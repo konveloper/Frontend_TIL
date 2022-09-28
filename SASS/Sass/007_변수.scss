@@ -1,0 +1,55 @@
+// 변수 type
+// numbers, strings, color, booleans, lists, null
+// numbers : 1, .82, 20px, 2em 등
+// strings : "./images/a.png", bold, left, uppercase 등
+// colors : green, #FFF, rgba(255,0,0,.5) 등
+// booleans : true, false
+// nul
+// lists 
+// maps 
+
+// number (숫자)
+$one : 1;
+
+// string (문자)
+$two : './assets/img/';
+$three : 'background.png';
+.test {
+    background-image: url($two + $three);
+}
+
+// color
+$four : #fff;
+
+// booleans(참, 거짓) - 논리형
+$five : true;
+
+// nu;;
+$six : null;
+
+// list (0부터 시작하지 않는다)
+$font-size: 10px 12px 16px; // 폰트 사이즈 리스트
+// $image-file: photo_01, photo_02, photo_01 // 이미지 리스트
+
+// 파일명 리스트
+.test2{
+    font-size: nth($list: $font-size, $n: 2);
+}
+.test3{
+    font-size: nth($font-size, 2);
+}
+
+//sass 공식문서
+$font-weights: ("regular": 400, "medium": 500, "bold": 700); //글자 굵기 리스트
+
+//아래와 같은 형태로 사용 - ruby sass
+map-get($font-weights, "medium"); // 500
+map-get($font-weights, "extra-bold"); // null
+
+.test4{
+    font-weight: map-get($font-weights, "medium"); // 500
+}
+
+.test5{
+    font-weight: map-get($font-weights, "hello"); // 컴파일은 되나 null
+}

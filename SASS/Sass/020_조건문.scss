@@ -1,0 +1,46 @@
+@use "sass:math";
+
+$one: 10px;
+$two: 100px;
+
+@mixin avatar($size, $circle: false) {
+    width: $size;
+    height: $size;
+    background-color: red;
+
+    @if $circle {
+        // border-radius: $size / 2; // step 1
+        // border-radius: ($size / 2) + px; // step 2
+        // border-radius: ($size / 2) + "px"; // 문자열 "00px"로 들어갑니다.
+
+        // 시스템 권고사항
+        // math.div($size, 2) or calc($size / 2)
+        // border-radius: math.div($size, 2);
+    } @else {
+        border-radius: 2px;
+    }
+}
+
+.one {
+    @include avatar(10px, true)
+}
+
+.two {
+    @include avatar(10, true)
+}
+
+.three{
+    @include avatar(10px, false)
+}
+
+.four{
+    @include avatar(10px)
+}
+
+.five{
+    @include avatar(10px, 10 > 100)
+}
+
+.six {
+    @include avatar(10px, $one > $two)
+}

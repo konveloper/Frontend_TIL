@@ -1,0 +1,59 @@
+// test 코드
+.one {
+    font-size: 10px + 10px;
+}
+
+.two {
+    font-size: 10px - 10px;
+}
+
+// 괄호가 있어야 합니다.
+// 문자열로 반환
+// .three {
+//     font-size: 10px / 10;
+// }
+
+.three {
+    font-size: (10px / 10);
+}
+
+// error
+// .four {
+//     font-size: 10px * 10px;
+// }
+
+// error
+// .four {
+//     font-size: 10px * 1in;
+// }
+
+// error
+// .four {
+//     font-size: (10px * 10px);
+// }
+
+// .four {
+//     font-size: 10px * 10;
+// }
+
+// .four {
+//     font-size: 10px * 10.1;
+// }
+
+// error
+// .five {
+//     font-size: 10px ** 10px;
+// }
+
+// 곱하기와 나누기와는 다르게 2개의 단위가 모두 있어도 애러가 나지 않습니다. 앞의 값으로 반환합니다.
+// .six {
+//     font-size: 10px % 3px;
+// }
+
+// .six {
+//     font-size: 10px % 3;
+// }
+
+.six {
+    font-size: 3in % 10px;
+}

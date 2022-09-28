@@ -1,0 +1,38 @@
+//Sass 공식문서
+@debug 10s + 15s; // 25s
+@debug 15px - 10px; // 0.8958333333in
+@debug 5px * 3px; // 15px*px
+
+
+.test {
+    width: calc(100% - 80px);
+}
+
+.one {
+    font-size: 15px - 10px;
+}
+
+// error
+// .two {
+//     font-size: 15px - 1em;
+// }
+
+.three {
+    font-size: 1in - 15px;
+}
+
+.four {
+    font-size: 1cm - 15px;
+}
+
+.five {
+    font-size: 1cm - 15px;
+}
+
+.six {
+    font-size: 1 - 15px;
+}
+
+.seven {
+    font-size: 15px - 10;
+}
