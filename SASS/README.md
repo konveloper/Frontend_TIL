@@ -24,15 +24,6 @@ body {
 	color: $primary-color;
 }
 ```
-```
-//Sass
-$font-stack: Helvetica, sans-serif
-$primary-color : #333
-
-body 
-	font: 100% $font-stack
-	color: $primary-color
-```
 
 ## 2. 파일 분리와 Nesting
 ## 1. 파일 분리 및 주석
@@ -102,7 +93,7 @@ nav {
   background-size: 14px 14px;
 }
 ```
-### 2-3. ampersand 앰퍼샌드 (파일 003_부모선택자_엠퍼센트 참고)
+### 2-3. ampersand 앰퍼샌드 (파일 003~004_부모선택자_엠퍼센트참고)
 - "&"는 상위에 있는 부모선택자
 - `&`을 이용하여  after, hover 등의 가상요소, 가상클래스, class나 id 셀렉터 등을 참조
 ```
@@ -127,3 +118,36 @@ nav {
 .box::after{} /* 가상요소 */
 .box::before{}
 ```
+
+### 005_atroot.scss
+```
+/*SCSS*/
+.one{
+    background-color: yellow;
+    .two{
+        font-size: 20px;
+        @at-root .three{
+            display:flex;
+        }
+    }
+}
+```
+@atroot를 적으면 독립
+```
+/*CSS*/
+.one {
+  background-color: yellow;
+}
+.one .two {
+  font-size: 20px;
+}
+.three {
+  display: flex;
+}
+```
+## 3. 변수(Variable) (파일 006_변수.scss 참고)
+- `$변수 : 값`
+- 값이 두 번 이상 반복될 때 변수로 만들면 값을 기억하지 않고 변수명만을 가지고 스타일 조절.
+- 기존의 값을 다른 값으로 변경해야할 경우, 변수의 값만 변경하면 되기 때문에 값이 수정될 가능성이 있다면 변수 생성을 고려
+- 보통 타이포그래피, 폰트색상, 폰트사이즈, 글자 간격 등의 값을 변수로 정의
+
