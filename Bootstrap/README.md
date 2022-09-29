@@ -35,4 +35,4 @@
 ### datepicker (012_datepicker.html)
 ### summernote (013_summernote.html)
 ### toast (014_toast.html)
-### bootstrap selctor (015_bootstrap_selector.html)
+### bootstrap select (015_bootstrap_selector.html)
