@@ -172,11 +172,11 @@ nav {
 ```
 **Content** (016_content.scss)
 @content를 사용하면 원하는 부분에 스타일을 추가하여 전달할 수 있다. 하지만 콘텐츠 사용하는 것보다 @include로 풀어서!
-## Extend
+## Extend (017_extend.scss)
 - mixin는 (관계 없는) 선택자에서 조금 다른 스타일을 적용할 때 사용 (믹스인 더 많이 사용!)
 - extend는 관계 있는 선택자들의 동일한 소스코드 적용시 사용
 (1)이미 스타일이 작성된 선택자의 클래스를 extend하거나 (2)`%`를 사용해서 따로 스타일을 정의한 후 extend하여 원하는 선택자에게 스타일을 적용
-## modal
+## modal (019_placeholder.scss)
 %를 사용하여 스타일 블럭을 만들고, 각각의 모달에 스타일을 적용
 - %placeholder (019_Placeholder.scss)
 % 로 선택자를 만든다. @extend를 사용해서 앞서 %placeholder 스타일 블럭을 불러온다. %선택자는 CSS로 컴파일되지 않는다.
