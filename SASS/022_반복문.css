@@ -1,0 +1,23 @@
+.photo-box:nth-child(1) {
+  background-image: url("../assets/phoster1.png");
+}
+
+.photo-box:nth-child(2) {
+  background-image: url("../assets/phoster2.png");
+}
+
+.photo-box:nth-child(3) {
+  background-image: url("../assets/phoster3.png");
+}
+
+.profile:nth-child(1) {
+  background-image: url("../assets/profile1.png");
+}
+
+.profile:nth-child(2) {
+  background-image: url("../assets/profile2.png");
+}
+
+.profile:nth-child(3) {
+  background-image: url("../assets/profile3.png");
+}/*# sourceMappingURL=022_반복문.css.map */

@@ -1,0 +1,17 @@
+.box{
+    &-yellow{
+        background-color: yellow;
+    &-red{
+            background-color: red;
+        }
+    }
+}
+
+.btn{
+    &-submit{
+        background:yellow;
+    &-close{
+        background-color: red;
+    }
+    }
+}

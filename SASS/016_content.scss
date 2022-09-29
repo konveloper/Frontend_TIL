@@ -1,0 +1,14 @@
+@mixin sample{
+    display:flex;
+    justify-content: center;
+    align-items : center;
+    @content;
+}
+
+// 콘텐츠 사용하는 것보다 이렇게 풀어서 
+.one {
+    @include sample{
+        color: white;
+    }
+    background-color: red;
+}

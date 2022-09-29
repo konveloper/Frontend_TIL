@@ -1,0 +1,37 @@
+@mixin image-style($url, $size, $repeat, $positionX, $positionY) {
+    background-image: url($url);
+    background-size: $size;
+    background-repeat: $repeat;
+    background-position: $positionX $positionY;
+  } 
+  //background관련 스타일 코드가 들어있다.
+  //mixin의 인수에 따라 조금씩 다른 스타일링이 가능하다.
+  
+  .profile {
+    @include image-style("./assets/user.jpg", cover, no-repeat, center, center);
+  }
+  
+  .box-one {
+    @include image-style("/images/poster1.svg", cover, no-repeat, 40%, 50%);
+  }
+
+  @mixin image-style($url, $size, $repeat, $positionX : 50%, $positionY : 50%) {
+    background-image: url($url);
+    background-size: $size;
+    background-repeat: $repeat;
+    background-position: $positionX $positionY;
+} 
+
+//background관련 스타일 코드가 들어있다.
+//mixin의 인수에 따라 조금씩 다른 스타일링이 가능하다.
+.profile {
+    @include image-style("./assets/user.jpg", cover, no-repeat);
+}
+
+.profile-1 {
+    @include image-style("./assets/user.jpg", cover, no-repeat, 30%);
+}
+
+.profile-2 {
+    @include image-style("./assets/user.jpg", cover, no-repeat, 30%, 30%);
+}
