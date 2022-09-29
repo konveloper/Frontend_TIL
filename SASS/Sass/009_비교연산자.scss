@@ -1,8 +1,0 @@
-//Sass 공식문서
-// 숫자
-@debug 100 > 50; // true
-@debug 10px < 17px; // true
-@debug 1000ms <= 1s; // true
-
-@debug 1px == 1px; // true 깉다==
-@debug 1px != 1em; // true 다르다!= em은 부모사이즈 가져온 것으로 몇px인지 모른다 
