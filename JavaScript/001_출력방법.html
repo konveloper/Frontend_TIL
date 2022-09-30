@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <p id="one"></p>
+    <!--대부분 스트립트는 뒤에 있다-->
+    <script>
+        // 출력하는 방법
+        // about:blank에서 개발자 도구를 열고, colsole에서 document. 라고 치면 여러가지 document 메서드를 볼 수 있다.
+        document.getElementById("one").innerHTML = 
+            "hello <strong>world</strong>";
+            //document.getElementById("one").라는 요소의 메서드가 innerHTML 
+        console.log("hello world 2");
+        //콘솔은 꼭 브라우저에 있는 것은 아니며 테스트를 하기 위해 많이 사용한다
+        window.alert("hello world 3");
+        //alert가 윈도우 안에 있고 윈도우를 적어주는 것이 보통
+        document.write("hello world 4");
+</script> 
+</body>
+</html>

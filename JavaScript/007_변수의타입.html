@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        //어떤 타입인지 알아야 속성을 검색해볼 수 있다
+        console.log(typeof 'hello world');   // String, 지금 알기
+        console.log(typeof 100);             // Number, 지금 알기
+        console.log(typeof NaN);             // Number
+        console.log(typeof true);            // Boolean, 지금 알기
+        console.log(typeof undefined);       // undefined, 지금 알기
+        console.log(typeof Symbol());        // Symbol
+        console.log(typeof null);            // Object, 여기서부터 js가 어려워 집니다.
+        console.log(typeof []);              // Object, 여기서부터 js가 어려워 집니다. 왜 Array가 아닐까요?
+        console.log(typeof {});              // Object
+        console.log(typeof function () {});  // function
+        console.log(typeof /정규표현식/gi);   // Object
+        // Object.prototype.toString.call(데이터).slice(8, -1);
+        // 로 확실하게 알 수 있습니다.
+
+        console.log("-----");
+        console.log(10 + 10); // 20
+        console.log("10" + 10); // 1010
+        console.log("10" + "10"); // 1010
+        console.log(10 + "10"); // 1010
+
+        console.log("-----");
+        // 형변환은 형태를 변경하는, 타입을 변경하는 것을 의미
+        console.log(Number("10") + Number("10")); // 20 권장하지 않습니다
+        console.log(parseInt("10") + parseInt("10")); // 20 권장합니다
+        console.log(String(10) + String(10)); // 1010
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        console.log("hello");
+
+        let data = {
+            'one' : 1,
+            'two' : 2,
+            'three' : 3,
+        }
+        console.dir(data);
+
+        // 그냥 출력했을 때에는 알파벳순
+        let data2 = [10, 20, 30];
+        console.dir(data2);
+
+        //초록이었던 것으로 기억한다고 함
+        console.info("hello world");
+
+        // 계층 표현할 때
+        console.group("one");
+        console.log("a/팀원");
+        console.log("b/팀원");
+        console.log("c/팀원");
+        console.group("two");
+        console.log("d/팀장");
+        console.log("e/팀장");
+        console.groupEnd();
+        console.log("end");
+        console.log("end");
+
+        console.table(data);
+
+        console.error("error");
+
+        console.warn("실행은 해줄게 다만 경고문구는 읽어봐");
+    </script>
+</body>
+</html>
