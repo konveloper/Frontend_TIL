@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // number 소숫점도 포함, integer 정수 소숫점이 포함되지 않습니다.
+        // 275를 2진수로 바꿔라 -> 가까운 2의 제곱수부터 찾고 계산하기
+        // 256 + 16 + 2 + 1
+        // 256(O) 128(X) 64(X) 32(X) 16(O) 8(X) 4(X) 2(O) 1(O) 역순 배열
+        // 100010011
+
+        let n1 = 10000;
+        let n2 = 10.123123;
+        let n3 = 31;
+        let n4 = 1001;
+        let n5 = 1111; //
+        let s = "1000000000";
+        let s2 = "1,000,000,000";
+        console.log(parseInt(n1)); //10000
+        console.log(parseInt(n2)); //10
+        console.log(parseInt(n3, 2)); //NaN 뒤에 있는 숫자가 진수입니다 (2진수가 아니기 때문에 NaN)
+        console.log(parseInt(n4, 8)); //513 뒤에 있는 숫자가 진수입니다 (8진수)
+        console.log(parseInt(n5, 2)); //15 (2진수)
+        console.log(n2.toFixed(3)); //10.123 (소수점 3자리까지)
+
+        console.log("-------");
+        console.log(Number(true)); //1
+        console.log(Number(false)); //0
+        console.log(Number("")); //0
+        console.log(Number(" ")); // 0 false니까 0이 나온 것 주의! 다른 언어에서는 error
+
+        console.log("-------"); // NaN
+        console.log(Number("hello")); //NaN
+        console.log(Number("10 20")); //NaN
+        console.log(Number("10     ")); //10
+        console.log(Number("     10")); //10
+        console.log(Number("     10     ")); //10
+
+        if(" ") {
+            console.log("hello world - 1");
+        } // hello world - 1 공백값은 true... 너무 관대하다
+
+        if("") {
+            console.log("hello world - 2");
+        } // 아무것도 나오지 않는다
+
+        console.log(Math.abs(-10)); //10
+        console.log(Math.PI); //3.141592653589793
+        console.log(Math.max(10, 20, 30, 1, 200, 3)); //200
+        console.log(Math.min(10, 20, 30, 1, 200, 3)); //1
+
+        let data = [10, 20, 30, 40];
+        console.log(Math.max(data)); //NaN 배열이지 숫자가 아니라서?
+        console.log(Math.max(...data)); //40
+        // console.log(Math.max(10, 20, 30, 40))와 같다
+
+        // round 반올림
+        console.log(Math.round(4.7)); //5 
+        console.log(Math.round(4.3)); //4
+
+        //ceil(올림)이나 floor(내림)
+        console.log(Math.random()*100);
+        // 100보다 작은 랜덤한 수를 정하고 싶을 때 (소수점 잘라내고?)
+
+        // Math.sqrt 제곱근
+        console.log(Math.sqrt(64)); //8 (루트64)
+        // Math.pow 거듭제곱
+        console.log(Math.pow(2,3)); //8
+        console.log(Math.pow(2, 4)); //16
+
+        // integer: 정수
+        // bigint: big integer 큰 정수 (JS에서 큰 숫자 사용할 때)
+        // sqrt: square root 
+
+        // computer의 10진수 연산은 정확하지 않다.
+        // 부동소수점 이슈
+        // 0.1 + 0.2
+        // 0.30000000000000004
+        // 0.1 * 3
+        // 0.30000000000000004
+        // 0.3 + 0.6
+        // 0.8999999999999999
+        // JS에서 큰 숫자를 사용할 때에는 BigInt를 사용합니다.
+        // console.log(Number.MAX_SAFE_INTEGER)
+        // BigInt(12312312312312312312) + BigInt(2)
+        // 123123123123123123121333n + 2n;
+
+        /*
+        1bit: 0과 1을 표현할 수 있는 최소 단위
+        8bit = 1byte 
+        1byte가 표현할 수 있는 숫자는 127 음수 포함?
+        00000000 ~ 1111111111 ( 0 ~ 255 )
+        1024byte = 1KB
+        1024KB = 1MB
+        1024MB = 1GB
+        1024GB = 1TB
+        (KB,MB,GB,TB,PB)갈매기털빼
+        */
+        
+/*
+Math.max()가 내부의 '인수'들 중 가장 큰 값을 찾는거라
+Math.max(1, 2, 3, 4, 5)와 같이 인수가 펼쳐져있어야 합니다.
+
+이 때, 
+const a = [1, 2, 3, 4, 5] 로 하고,
+a 배열 내 요소들 중 가장 큰 값을 찾고 싶을 때
+Math.max(a)와 같이 인수를 넣게 된다면
+사실 max 메서드는 [] 배열 덩어리를 받은게 됩니다.
+따라서 오류를 내뱉습니다. 배열은 숫자가 아니라 NaN이 출력될거에요.
+
+따라서 스프레드 문법 요소인 ...a를 통해 배열을 깨부시고 배열 내부의 요소들을 다꺼내서 max 메서드 안에 진열해주는 것 같습니다.
+*/
+        </script>
+    </body>
+</html>
+
+    </script>
+</body>
+</html>

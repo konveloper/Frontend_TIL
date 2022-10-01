@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String</title>
+</head>
+<body>
+    <script>
+    // 문자열
+    let txt = "ABCDEFG";
+    let txt2 = "kon said 'hello world'";
+    // escape 문자
+    // \" 쌍따옴표 붙일 수 있다
+    let txt3 = "kon said \"hello world\"";
+    // \n 은 엔터
+    let txt4 = "a\nb\nbde";
+    // \t 는 수평탭(개행) 
+    let txt5 = "a\tb\tcde";
+    let txt6 = "10abc";
+    let txt7 = "100.1abc";
+        //float 실수 int 정수
+    console.log(txt + txt); //ABCDEFGABCDEFG
+    console.log(txt[0]); //A
+    console.log(txt[-1]); //undefined
+    console.log(txt[4] + txt[5] + txt[6]); //EFG
+    console.log(txt2); //kon said 'hello world'
+    console.log(txt3); //kon said "hello world"
+    console.log(txt4);
+    //a
+    //b
+    //bde
+    console.log(txt5); //a	b	cde
+    console.log(txt5[2]); //b (이때 t를 1개의 문자열로 처리한다)
+    console.log(parseInt(txt6) + parseInt(txt6)); //20
+    console.log(Number(txt6) + Number(txt6)); // NaN 숫자만 처리해준다
+
+    // console.log() : 요소를 HTML과 같은 트리구조로 출력
+    console.log(typeof txt); //string
+    // console.dir() : 요소를 JSON과 같은 트리구조로 출력
+    console.dir(txt2); //kon said 'hello world'
+
+    // 스트링의 메서드
+    console.log(txt.length); 7 // 8개 글자지만 index는 length -1
+
+    // indexof는 정규표현식을 사용하지 않습니다.
+    console.log(txt.indexOf("E")); //4
+    console.log(txt.search("E")); //4
+    // 로직에 문제. 찾아서 코드를 실행시키고 싶었는데 0은 false이기 때문에 못 찾은 것으로 인식. -1은 true 0 이외에 다른 숫자는 true. 
+    console.log(txt.indexOf("Z")); //-1
+    console.log(txt.indexOf("Z")); //-1
+    // regExp 정규표현식. 표현식을 찾겠다는 것 // 안에 들어간 게 패턴
+    let regExp = /CD/;
+    console.log(txt.search(regExp)); //2
+    </script>
+</body>
+</html>

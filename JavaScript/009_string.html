@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        let txt = "abcAHelloBC"
+        let txt2 = "paullab CEO leehojun CEO";
+        let regExp = /[A-Z]/g;
+        console.log(txt.search(regExp)); // 3
+        // []사이에 있는 A-Z 글자를 찾겠다
+
+        // slice (시작인덱스, 종료인덱스): 시작인덱스부터 종료인덱스-1까지 변환합니다. (공백도 문자)
+        console.log(txt2.slice(1, 3)); // au
+        console.log(txt2.slice(3, 1)); // 작동하지 않습니다
+        console.log(txt2.slice(2)); //ullab CEO leehojun (잘라내고 나머지)
+
+        // substring(시작인덱스, 종료인덱스) : 시작인덱스부터 종료인덱스-1까지 변환합니다.
+        console.log(txt2.substring(1, 3)); //au
+        console.log(txt2.substring(3, 1)); //au 작동합니다
+        console.log(txt2.substring(2)); //ullab CEO leehojun
+
+        //substr (시작위치, 길이) : 시작인덱스부터 길이만큼 반환합니다.
+        // MDN 참고 명세에서 사라질 수도 있음
+        console.log(txt2.substr(8, 3)); //CEO (0-8번째부터 3개)
+        console.log(txt2.substr(txt2.indexOf("C"),3)); //CEO
+
+        // replace(바꿀 문자열, 바뀔 문자열)
+        // 중요! 대부분 바꾸고 싶은 문자는 전역에 있다 -> 다 변환시키려면 정규표현식 /바꾸고싶은문자/g
+        console.log(txt2.replace("CEO", "CTO")); //paullab CTO leehojun CEO
+        console.log(txt2.replace(/"CEO"/g, "CTO")); // paullab CEO leehojun CEO <- ""도 문자열로 처리합니다
+        console.log(txt2.replace(/CEO/g, "CTO")); // paullab CTO leehojun CTO
+        console.log(txt2.replaceAll("CEO","CTO")); // paullab CTO leehojun CTO
+        
+        console.log(txt.toUpperCase()); //ABCAHELLOBC 
+        console.log(txt.toLowerCase()); //abcahellobc
+
+        // 그 문자를 포함하고 있나? 값을 먼저 찾고 나면 오해의 여지가 없다
+        console.log(txt.includes("H")); //true
+        console.log(txt.includes("Z")); //false
+
+        //split 
+        console.log(txt2.split(" "));//(4) ['paullab', 'CEO', 'leehojun', 'CEO'] <- 띄어쓰기 기준으로 잘라낸다
+        console.log("010-5044-2903".split(""));//(13) ['0', '1', '0', '-', '5', '0', '4', '4', '-', '2', '9', '0', '3']
+
+        //trim 앞뒤 공백 생략
+        console.log("     abc"); //     abc
+        console.log("     abc".trim()); //abc
+        console.log("         a b c".trim()); //a b c
+        console.log("         a b c              ".trim()); // a b c
+    </script>
+</body>
+</html>
