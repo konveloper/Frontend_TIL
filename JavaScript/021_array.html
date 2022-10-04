@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // array
+        // 값 변경 가능
+        // 대부분 동일한 자료 형태가 반복
+        let 과일 = ["사과", "수박", "복숭아", "딸기", "바나나"]
+        console.log(과일[1]); //수박
+        let 꺼낸과일 = 과일.pop();  // <- 과일.pop(); 맨 마지막 것만 빠지게 설계, 바나나가 없어짐
+        과일.push("멜론"); // 맨 마지막에 넣기로 약속
+        console.log(과일); // (5) ['사과', '수박', '복숭아', '딸기', '멜론']
+        과일.push(꺼낸과일); // 꺼낸 바나나 다시 넣기
+        console.log(과일); // (6) ['사과', '수박', '복숭아', '딸기', '멜론', '바나나']
+
+        // 0. matrix(행렬)에서 값 찾기
+        let array = [
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+        ];
+        // 6이라는 값을 찾아보세요
+        // console.log(array[1][2]);
+
+        // TMI
+        function sum(x, y){
+            return x + y
+        }
+        let test = [1,2,3];
+        let obj = {"one":1, "two":2}
+        let data = [console.log, sum, test, obj]
+        // test 2 값을 꺼내고 싶으면 콘솔창에 data[2][1]
+    </script>
+</body>
+</html>

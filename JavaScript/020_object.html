@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // object
+
+        let newuser = {
+            id : "konkon",
+            pw : "1234", // 81DC9BDB52D04DC20036DBD8313ED055 이렇게 저장합니다. ("MD5는 사용하지 않습니다.")
+            name : "kon",
+            email : "konveloper@gmail.com",
+            active : false,
+        } 
+
+        console.log(newuser["id"]); // konkon
+        console.log(newuser.id); // konkon
+
+        let user = [
+                {
+                    //key : value
+                    id: "licat",
+                    pw: "1234", // 81DC9BDB52D04DC20036DBD8313ED055 이렇게 저장합니다. ("MD5는 사용하지 않습니다.")
+                    name: "leehojun",
+                    email: "paul@weniv.com",
+                    active: true,
+                },
+                {
+                    //key : value
+                    id: "lion",
+                    pw: "2345", // 81DC9BDB52D04DC20036DBD8313ED055 이렇게 저장합니다. ("MD5는 사용하지 않습니다.")
+                    name: "leehojin",
+                    email: "pa@weniv.com",
+                    active: true,
+                },
+            ];
+
+            console.log(user[0]["id"]); // licat
+            
+            // 3. 아래와 같이 선언 가능
+            let a = 10;
+            let b = 20;
+            let c = 30;
+            let e = { a, b, c };
+            console.log(e); // {a: 10, b: 20, c: 30} a..키와 10..밸류값 넣기 가능 예전엔 안됐는데 이제 되는 코드
+
+            // 4. 값을 변경할 수 있다
+            e["a"] = 50;
+            console.log(e); // {a: 50, b: 20, c: 30} 
+
+            // let test = { "one", "two", "three" };
+            // console.log(test); <- error
+
+            // 5. key 값으로 문자열 외에 다른 값을 넣었을 경우
+            let txt = "hello"
+            let txt2 = {
+                0: "h",
+                1: "e",
+                2: "l",
+                3: "l",
+                4: "o"
+            }
+
+            console.log(txt[1]); //e
+            console.log(txt2[1]); //e 유사 배열 객체 (내적으로 구조가 다르다)
+
+            // console.log(txt2.1); <- error 이걸 할 수 있게 하는 게 map
+            // console.log(txt2.{"one" : 1}) // map 점 찍고 할 수 있음
+
+            // 6. value의 값으로 문자열 외에 다른 값을 넣었을 경우
+            let test = {
+                one: sum,
+                two: console.log,
+                three: window.innerWidth,
+                four: [10, 20, 30],
+                five: "10",
+                six: 100,
+            };
+            console.log(test); // 됩니다
+            test.two("곤"); // 곤
+
+            // 7.key와 value만 뽑아낼 수 없을까?
+            console.log(Object.keys(newuser)); // (5) ['id', 'pw', 'name', 'email', 'active']
+            console.log(Object.values(newuser)); // (5) ['konkon', '1234', 'kon', 'konveloper@gmail.com', false]
+            console.log(Object.entries(newuser)); // 어레이 나온다
+
+            // map에서 사용할 수 있다
+            // newuser.keys();
+            // newuser.values();
+
+            // 8. object spread 용법
+            // 예제 : 회원정보에서 이름, 메일이 바뀌었을 때
+            // let newuser = {
+            // id : "konkon",
+            // pw : "1234",
+            // name : "kon",
+            // email : "konveloper@gmail.com",
+            // active : false,
+            // } 
+            let 회원정보업데이트 = {
+                name : "cat",
+                email : "cat@gmail.com"
+            }
+
+            // newuser["name"] = 회원정보업데이트["name"];
+            // newuser["email"] = 회원정보업데이트["email"];
+            // console.log(newuser); // {id: 'konkon', pw: '1234', name: 'cat', email: 'cat@gmail.com', active: false}
+
+            newuser = {...newuser, ...회원정보업데이트}; // 스프레드 용법. 펼쳐준다!
+            console.log(newuser); // {id: 'konkon', pw: '1234', name: 'cat', email: 'cat@gmail.com', active: false}
+
+            // 이렇게 바꾸면 2개 다 바뀐다
+            // let newuser2 = newuser; // 등호는 같은 게 아니라 가리키는 포스트잇 같은 것. =를 등호 대신 assignment (할당) 연산자로 보기.
+            // newuser2["id"] = "helloworld";
+            // console.log(newuser);
+            // console.log(newuser2);
+
+            // spread 기법을 사용하면 원본을 만지지 않고 사용할 수 있다. 값을 펼칠 때 사용
+            let newuser2 = { ...newuser };
+            newuser2["id"] = "helloworld";
+            console.log(newuser);
+            console.log(newuser2);
+
+            // 함수는 후에 자세히 다룹니다.
+            function sum(x, y) {
+                return x + y;
+            }
+
+            // TMI입니다. 뒤에서 다룰 내용이에요.
+            // console.log(typeof sum);
+            // sum.value = 'hojun';
+            // console.log(console.dir(sum));
+            // console.log(sum.value);
+            // console.log(typeof sum);
+        </script>
+</body>
+</html>

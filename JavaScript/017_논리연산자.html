@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>논리연산자</title>
+</head>
+<body>
+    <script>
+        // true : 1
+        // false : 0
+        // and(&&) : 곱
+        // or(||) : 합
+        // not(!) : 부정
+
+        console.log(true || false); // true (1+1 바로 나오듯 답이 빠르게 연산할 수 있어야함)
+        console.log(true || true); // true
+        console.log(true && false); // false
+        console.log(!false); // true
+        console.log(!!false); // false (느낌표 두개 -> 자료형이 불리언이 된다. 실무에서도 정말 많이 사용! 불리언이 아닌 데이터를 불리언으로 표현하고싶을 때 사용)
+        console.log(!!""); // false
+
+        // 우리를 여전히 힘들게 하는
+        console.log(!![]); // true (JS에서만 true)
+        console.log(Boolean([])); // true (JS에서만 true 다른 언어에서는 false)
+
+        console.log("------");
+        console.log("confuse_1");
+        console.log("false"==false); // false
+        console.log(!"false"); // false (문자열이고 문자가 있는 거니까 true인데 true의 반대)
+        console.log(!"0"); // false (문자열이고 문자가 있는 거니까)
+        console.log("abc" / 1) // NaN
+        console.log(!!NaN); // false (이해가 아니라 암기)
+        console.log(!!null); // false (이해가 아니라 암기, null은 비어있는 값이지 값 자체가 없는 게 아님)
+        console.log(!!undefined); // false (이해가 아니라 암기)
+
+        // 단락평가 (간단한 코드에서 권고합니다)
+        // 이런 프로세스이지 동일한 코드를 사용하는 건 아닙니다
+        username = ""; // 유저가 입력을 안했다
+        console.log(username && "이름을 입력하지 않으신 분") // 앞에가 false기 때문에 and를 만나는 순간 뒤에 읽을 필요 X
+        console.log(username || "이름을 입력하지 않으신 분") // 앞에가 false면 뒤에 읽어야 한다 그럼
+        username = "";
+        username = username || "이름을 입력하지 않으신 분";
+        console.log(username); // 이름을 입력하지 않으신 분
+        username = 'abc';
+        username = username || "이름을 입력하지 않으신 분"; // 앞에가 true니까 뒤에 읽을 필요 없고
+        console.log(username); // abc
+
+        // 문제입니다.
+        // username도 입력하고 pw도 입력해야만 회원가입 성공여부가 true, false 나오게 해주세요.
+        // 둘 중에 1개라도 입력이 안되면 false가 나와야 합니다.
+        username = "";
+        pw = "";
+        회원가입성공여부 = username || "이름을 입력하지 않으신 분";
+        console.log(username);
+        // 정답 리스트
+        회원가입성공여부 = username && pw ? true : false; // 3항 연산자 사용
+        회원가입성공여부 = !!(username && pw);
+        회원가입성공여부 = !(!username || !pw);
+        회원가입성공여부 = !!pw && !!username;
+        username = "abc";
+        username = username || "이름을 입력하지 않으신 분";
+        console.log(username);
+        // 참고삼아서만 알아주세요.
+        username = "";
+        username = username || false;
+        console.log(username);
+        username = "";
+        username = username || 0;
+        console.log(username);
+        console.log("-----------");
+        console.log("드모르간 법칙");
+        // or : ||
+        // and : &&
+        const x = 0;
+        const y = 1;
+        console.log(!(x || y) === (!x && !y));
+        console.log(!(x && y) === (!x || !y));
+        // 알고리즘 문제
+        // for (let i = 0; i < 100; i++) {
+        //     // console.log(i);
+        //     if (i % 3 == 0) {
+        //         console.log(i);
+        //     }
+        //     if (i % 5 == 0) {
+        //         console.log(i);
+        //     }
+        // }
+
+        // for (let i = 0; i < 100; i++) {
+        //     // console.log(i);
+        //     if (i % 3 == 0 && i % 5 == 0) {
+        //         console.log(i);
+        //     }
+        // }
+        let s = 0;
+        for (let i = 0; i < 100; i++) {
+            // console.log(i);
+            if (i % 3 == 0 || i % 5 == 0) {
+                console.log(i);
+                s += i;
+            }
+        }
+        console.log(s);
+    </script>
+</body>
+</html>

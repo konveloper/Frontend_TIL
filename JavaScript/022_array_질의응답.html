@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script>
+        // 원본 수정 없이 값을 수정하고 싶다면 spread!
+        let x = [10, 20, 30, 40];
+        console.log([...x].pop()); // 40 (x 값 만지지 않고 싶으면 새로운 어레이 만들어서 팝 해주기)
+        console.log(x); // (4) [10, 20, 30, 40] (변하지 않았다?)
+
+        let y = [...x]
+        y.pop();
+        console.log(y); // (3) [10, 20, 30]
+    </script>
+</body>
+</html>

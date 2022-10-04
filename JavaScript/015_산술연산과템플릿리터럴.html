@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+    </head>
+    <body>
+        <script>
+            let one = 10;
+            let two = 3;
+            console.log(one + two);
+            console.log(one - two);
+            console.log(one / two);
+            console.log(one * two); 
+            console.log(one ** two); //one의 3제곱(3승) // 1000
+            console.log(one % two); // 나머지
+            console.log(one, one, two, two);
+
+            // 구구단 출력하기
+            console.log(one, "X", two, "=", one * two); // 권장하지 않습니다
+            console.log(one + " X " + two + " = " + one * two); // 권장하지 않습니다.
+            console.log(`${one} X ${two} = ${one * two}`) // 권장하지 않습니다. 템플릿 리터럴을 권장하지 않는다는 말은 아닙니다.
+            
+            let three = one * two;
+            console.log(`${one} X ${two} = ${three}`) // 권합니다.
+
+            console.log(`${one} 
+            X 
+            ${two} = ${one * two}`) // 개행하면 개행이 됩니다.
+
+            // console.log('h
+            // e
+            // l
+            // l
+            // o'); //안됩니다
+            console.log(`h
+            l
+            l
+            o`)
+            // 백틱은 가능합니다
+        </script>
+    </body>
+</html>

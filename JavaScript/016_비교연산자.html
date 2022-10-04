@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const one = 10;
+        const two = 3;
+        const one_ = '10';
+
+        // lg나 log 화살표 아래 누르고 탭 하면 console.log 나온다
+        console.log(one > two); // true
+        console.log(one >= two); // true
+        console.log(one < two); // false
+        console.log(one <= two); // false
+        console.log(one == two); // false
+        console.log(one === two); // false 타입까지 비교하는 것. 다른 언어에 없다.
+        console.log(one !== two); // true 다르다. 다른 언어에 없다.
+
+        // 우리를 힘들게 하는 것
+        console.log("------");
+        console.log(one == one_); // true 숫자고 문자이니 다른 언어에서는 false인데 JS는 너무 관대하다
+        console.log(one === one_); // false 다른 언어의 ==와 같다 (견고한 코딩을 위해 === 추천)
+    </script>
+</body>
+</html>

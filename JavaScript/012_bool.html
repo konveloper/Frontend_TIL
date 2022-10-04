@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>bool</title>
+</head>
+<body>
+    <script>
+        // const(참조 변경 불가, 해당 변수가 변경되었는지 걱정할 필요가 없다)
+        // let(변경 가능)
+        // var(X)
+
+        let one = true; // 다른 언어는 True가 대문자인 경우도 있다.
+        let two = false;
+        let three; // 값이 정해져있지 않으니 undefined인데 불리언 넣으면 false
+        let four = null; // null은 false
+        let five = Infinity; // 비교, 최대값 최소값 값 정렬 시키는 등 어떤 숫자보다 더 큰 숫자가 필요할 때 사용 
+
+        console.log(Boolean("")) // false(문자열 아무것도 없으면 false)
+        console.log(Boolean(" ")) // true(문자열 띄어쓰기는 true)
+        console.log(Boolean(0)); // false(0 외에 다른 숫자들은 true)
+        console.log(Boolean(100)); // true
+        console.log(Boolean(-100)); // true
+        console.log(Boolean(three)); // false(...!)
+        console.log(Boolean(four)); // false
+        console.log(Boolean(five)); // true
+        one = 0;
+
+        // 우리를 힘들게 하는 JS
+        console.log(Boolean([])); // true(빈 어레이도 true. 다른 언어에서는 while 트루인 동안 반복하고 빈 배열이 되는 순간 false가 되어 종료될텐데 JS는 무한루프가 됨)
+        console.log(Boolean({})); // true
+
+        if (one) {
+            console.log("hello")
+        } else {
+            console.log("world")
+        }
+
+
+    </script>
+</body>
+</html>
