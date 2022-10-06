@@ -108,16 +108,81 @@
         // 2 (찾는 값이 없으면 undefined)
 
         // filter() : 모든 요소가 조건을 만족하는지 확인 (전부 다 찾는다)
-        // 예시 참고
+        const arr2 = [{
+            'name' : 'title1',
+            'contents' : 'contents1',
+            'dataNum' : 1
+        }, {
+            'name' : 'title2',
+            'contents' : 'contents2',
+            'dataNum' : 2
+        }, {
+            'name' : 'title3',
+            'contents' : 'contents3',
+            'dataNum' : 3
+        }, {
+            'name' : 'title4',
+            'contents' : 'contents4',
+            'dataNum' : 4
+        }, {
+            'name' : 'title5',
+            'contents' : 'contents5',
+            'dataNum' : 5
+        }];
+
+        arr.filter(i => i.dataNum > 3);
+        //
+        [{
+            'name' : 'title4',
+            'contents' : 'contents4',
+            'dataNum' : 4
+        }, {
+            'name' : 'title5',
+            'contents' : 'contents5',
+            'dataNum' : 5
+        }]
 
         // map() : 각각 요소에 함수를 호출할 때 (어레이로 만들어준다!!?)
         // 예시 참고
-        /* 
-        arr.map(i => i.name); 이것과
+        arr.map(i => i.name);
+        // 이것과
         arr.map(function (i) {
             return i.name
-        });  이것이 같다!
-        */
+        });
+        //이것이 같다!
+        
+            const arr3 = [{
+            'name' : 'title1',
+            'contents' : 'contents1',
+            'dataNum' : 1,
+            'data' : [1, 2, 3]
+        }, {
+            'name' : 'title2',
+            'contents' : 'contents2',
+            'dataNum' : 2,
+            'data' : [1, 2, 3]
+        }, {
+            'name' : 'title3',
+            'contents' : 'contents3',
+            'dataNum' : 3,
+            'data' : [1, 2, 100]
+        }, {
+            'name' : 'title4',
+            'contents' : 'contents4',
+            'dataNum' : 4,
+            'data' : [1, 2, 3]
+        }, {
+            'name' : 'title5',
+            'contents' : 'contents5',
+            'dataNum' : 5,
+            'data' : [1, 2, 100]
+        }];
+
+        arr3.map(i => i.name);
+        // ['title1', 'title2', 'title3', 'title4', 'title5']
+
+        arr3.map(i => i.name).indexOf('title3');
+        // 2
 
         // 문제 : map메소드를 이용해서 name의 값들을 원소로 하는 새로운 배열을 만들어 봅시다
         const studentList = [
@@ -171,6 +236,14 @@
             console.log("a: "+a, "b :"+ b); // console.log(`a : ${a}`, `b: ${b}`)
             return a - b;
         })
+
+        // 추가
+        const arrNum2 = [13, 9, 10, 2];
+        let arrNum2_test = [13, 9, 19, 2];
+        let test2 = [...arrNum2_test].sort();  // 원본을 만지지 않음 
+
+        console.log(arrNum2_test);  // [ 13, 9, 19, 2 ]
+        console.log(test2);  //  [ 13, 19, 2, 9 ]
         /*
         a: 9 b :13
         a: 10 b :9
