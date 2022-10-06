@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <script src="a.js"></script>
+    <script src="b.js"></script>
+    <script>
+        //var일때는 코드가 순차적으로 읽으면서 덮어씌워진 것, 두 개의 파일이 영향을 끼친다 
+        console.log(변수)
+        // 50 (var 일 때 b.js 적용)
+        // 10 let일 땐 덮어씌워지지 않음
+        console.log(함수(50,5)); // 250 (b.js 적용)
+    </script>
+</body>
+</html>
