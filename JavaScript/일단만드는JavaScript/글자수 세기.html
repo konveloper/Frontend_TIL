@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body class="container">
+    <h1>자기소개</h1>
+    <textarea onkeydown='counter();' class="form-control" rows="3" id="jasoseol">안녕하세요.</textarea>
+    <span id="count">(0/200)</span>
+    <script>
+      function counter(){
+      var content = document.getElementById('jasoseol').value;
+      if(content.length>200){
+        content = content.substring(0,200);
+        document.getElementById('jasoseol').value = content;
+      }
+      document.getElementById('count').innerHTML = '(' + content.length + '/200)';
+      };
+      counter();
+    </script>
+</body>
+</html>
