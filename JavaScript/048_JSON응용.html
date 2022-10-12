@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title></title>
+        <style>
+            table,
+            thead,
+            tbody,
+            tr,
+            th,
+            td {
+                border: solid 1px black;
+                border-collapse: collapse;
+            }
+        </style>
+    </head>
+    <body>
+        <button onclick="renderTable(userData)">회원정보 로딩</button>
+        <table style="width: 100%" id="infoTable">
+            <thead>
+                <th onclick="sort('_id')" style="width: 15%">id</th>
+                <th onclick="sort('index')" style="width: 15%">index</th>
+                <th onclick="sort('guid')" style="width: 15%">guid</th>
+                <th onclick="sort('age')" style="width: 15%">age</th>
+                <th onclick="sort('name')" style="width: 15%">name</th>
+                <th onclick="sort('gender')" style="width: 15%">gender</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <script>
+            let userData = [
+                {
+                    _id: "6346555b442cea576e37249c",
+                    index: 0,
+                    guid: "5b398a4f-86b4-411b-aabc-3adb96659fdd",
+                    age: 37,
+                    name: "Marshall Booker",
+                    gender: "male",
+                },
+                {
+                    _id: "6346555bf0204a1ee03b4151",
+                    index: 1,
+                    guid: "f8eaa1a3-91c6-42bf-ac43-a622dc6e5750",
+                    age: 26,
+                    name: "Millicent Berry",
+                    gender: "female",
+                },
+                {
+                    _id: "6346555b4aeca9e1506038b0",
+                    index: 2,
+                    guid: "e3b74bf7-7e6b-427e-93ab-a0b40b4a813c",
+                    age: 30,
+                    name: "House Williams",
+                    gender: "male",
+                },
+                {
+                    _id: "6346555b0a1e5fc2884ed06f",
+                    index: 3,
+                    guid: "407e62c9-172d-4e64-84a5-77dabfe36dbc",
+                    age: 20,
+                    name: "Hobbs Bartlett",
+                    gender: "male",
+                },
+                {
+                    _id: "6346555bbc08e6272c2e1ee2",
+                    index: 4,
+                    guid: "c237c8bc-dd6f-46eb-851e-16450c9493c7",
+                    age: 39,
+                    name: "Hancock Macdonald",
+                    gender: "male",
+                },
+                {
+                    _id: "6346555bf2fb2fc3c4673d9c",
+                    index: 5,
+                    guid: "a9144fc5-a490-4aee-9abe-b2c8ab6db6a1",
+                    age: 27,
+                    name: "Mercedes Lynch",
+                    gender: "female",
+                },
+                {
+                    _id: "6346555b9c9e72828bcd25de",
+                    index: 6,
+                    guid: "b4d4b22f-2421-4821-bcf2-31b5719667df",
+                    age: 28,
+                    name: "Dorthy Haney",
+                    gender: "female",
+                },
+            ];
+
+            var click = true;
+
+            function sort(key) {
+                if (click) {
+                    click = false;
+                    let sortedData = userData.sort((a, b) =>
+                        a[key] < b[key] ? -1 : a[key] > b[key] ? 1 : 0
+                    );
+                    renderTable(sortedData);
+                } else {
+                    click = true;
+                    let sortedData = userData.sort((a, b) =>
+                        a[key] > b[key] ? -1 : a[key] < b[key] ? 1 : 0
+                    );
+                    renderTable(sortedData);
+                }
+            }
+
+            function renderTable(userData) {
+                // console.log(userData[0]);
+                let tableBodyData = [];
+
+                for (const user of userData) {
+                    tableBodyData.push(`
+                        <tr>
+                            <td>${user._id}</td>
+                            <td>${user.index}</td>
+                            <td>${user.guid}</td>
+                            <td>${user.age}</td>
+                            <td>${user.name}</td>
+                            <td>${user.gender}</td>
+                        </tr>
+                    `);
+                }
+
+                console.log(tableBodyData.join(""));
+                document.querySelector("#infoTable > tbody").innerHTML =
+                    tableBodyData.join("");
+            }
+        </script>
+    </body>
+</html>

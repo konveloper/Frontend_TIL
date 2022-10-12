@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <button id="btn1">클릭1</button>
+        <button id="btn2">클릭2</button>
+        <script>
+            let test1 = {
+                one: 1,
+                two: 2,
+                three: function () {
+                    console.log(this);
+                },
+            };
+            let test2 = test1.three;
+
+            let btn1 = document.getElementById("btn1");
+            btn1.addEventListener("click", test1.three)
+            let btn2 = document.getElementById("btn2");
+            btn2.addEventListener("click", test2)
+            // console.log(this); 버튼 눌러보니 자기 자신 출력
+        </script>
+    </body>
+</html>
