@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- <ul></ul>
+    <button>Make me MORE!</button> -->
+
+    <div id="parentElement">
+        <span id="childElement">hello guys~</span>
+    </div>
+
+    <script>
+        // const myBtn = document.querySelector("button");
+        // const myUl = document.querySelector("ul");
+
+        // myBtn.addEventListener('click', function () {
+        //     for (let i = 0; i < 5; i++) {
+        //         // li 요소를 생성합니다.
+        //         const myLi = document.createElement('li');
+
+        //         // text 노드를 생성합니다.
+        //         const myTxt = document.createTextNode('안녕하세용!' + i);
+
+        //         //  자식으로 요소를 배치합니다.
+        //         myLi.appendChild(myTxt);
+        //         myUl.appendChild(myLi);
+        //     }
+
+        //     const li = document.querySelector('li');
+        //     // 자식 요소를 제거합니다.
+        //     myUl.removeChild(li);
+        // })
+
+        const span = document.createElement("span");
+
+        const myText = document.createTextNode('good morning!');
+
+        span.appendChild(myText);
+        const sibling = document.getElementById("childElement");
+        const parentDiv = document.getElementById("parentElement");
+
+        // span 요소를 sibling 의 앞으로 배치합니다.
+        parentDiv.insertBefore(span, sibling);
+    </script>
+</body>
+
+</html>

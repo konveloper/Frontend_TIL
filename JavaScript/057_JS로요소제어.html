@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title></title>
+</head>
+<body>
+
+<p></p>
+<input type="text">
+<button>Write Something!</button>
+
+<script>
+
+    const myBtn = document.querySelector("button");
+    const myP = document.querySelector("p");
+    const myInput = document.querySelector("input");
+
+    myBtn.addEventListener('click', function(){
+        myP.textContent = myInput.value;
+    });
+
+    // input 요소에 'input' 이벤트를 연결하면 실시간으로 값이 반영되게 만들 수도 있습니다.
+    myInput.addEventListener('input', () => {
+    myP.textContent = myInput.value;
+    });
+
+    // myP.innerHTML = "<strong>I'm Strong!!</strong>";
+    // myP.outerHTML = "<div></div>"; // 잘 안씀
+
+// innerHTML 은 요소(element) 내에 포함된 HTML 마크업을 가져오거나 설정합니다. 안에 있는 자스가 실행될 우려가 있어서 위험할 수 있음
+// innerText 속성은 요소의 렌더링된 텍스트 콘텐츠를 나타냅니다. (렌더링된에 주목하세요. innerText는 "사람이 읽을 수 있는" 요소만 처리합니다.)
+// textContent 속성은 노드의 텍스트 콘텐츠를 표현합니다. 더 바람직하다 ... !! 이것만 사용하는 게 좋다!
+// textContent 날것 뱉음 innerText 가공해서 뱉음(html 문법 해석해서)
+
+</script>
+</body>
+</html>

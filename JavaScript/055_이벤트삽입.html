@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+<button>HELLO!</button>
+<script>
+// target.addEventListener( type, listener )
+// 리스너 자리에 함수가 들어간다 (리스너함수)
+
+// 이벤트의 타입에는 click, mouseover, mouseout, wheel 등 다양한 이벤트를 감지합니다.
+// listener 함수의 인수에는 이벤트에 대한 정보가 담겨있습니다.
+
+const myBtn = document.querySelector("button");
+myBtn.addEventListener('click', function(){
+	console.log("hello world");
+})
+// HELLO! 버튼을 누르면 "hello world"가 콘솔로그에 찍힌다
+</script>
+</body>
+</html>
