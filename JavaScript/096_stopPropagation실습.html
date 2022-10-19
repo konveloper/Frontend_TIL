@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <h1>My todo list</h1>
+    <p>1. 오늘 저녁에는 김치찌개를 끓여 먹겠다.<button type="button">삭제</button></p>
+    <p>2. 후식으로 복숭아를 먹겠다.<button type="button">삭제</button></p>
+    <p>3. 자기 전에 내일 아침 메뉴를 생각해두겠다.<button type="button">삭제</button></p>
+<script>
+        const txts = document.querySelectorAll('p');
+        const btns = document.querySelectorAll('button');
+
+        // IE에서 for of 문 작성 불가
+        // for (const item of txts) {
+        //     item.addEventListener('click', () => {
+        //         alert(event.target.textContent.slice(0, -2));
+        //     })
+        // }
+
+        // IE는 nodelist 에 forEach 문 작성 불가
+        // txts.forEach(item => {
+        //     item.addEventListener('click', () => {
+        //         alert(event.target.textContent.slice(0, -2));
+        //     })
+        // })
+
+        // IE 대응 forEach문 코드 리팩토링
+        Array.prototype.forEach.call(txts, (item) => {
+            item.addEventListener('click', () => {
+                alert(event.target.textContent.slice(0, -2));
+            })
+        })
+
+        for (const item of btns) {
+            item.addEventListener('click', (event) => {
+                const result = confirm('삭제하시겠습니까?');
+
+                // 버블링 차단.
+                event.stopPropagation();
+                if (result) {
+                    item.parentElement.remove();
+                }
+            })
+        }
+</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- 앵커의 기본 동작을 중지 -->
+    <!-- <a href="https://www.naver.com" class="link">네이버 링크입니다만..</a>
+    <script>
+        const link = document.querySelector('.link');
+        link.addEventListener('click', (event) => {
+            console.log('clicked');
+            event.preventDefault();
+        })
+    </script> -->
+
+    <!-- submit 의 기본 동작을 중지 -->
+    <!-- <form action="">
+        <button type="submit" class="submit">제출</button>
+    </form>
+    <script>
+        const submit = document.querySelector('.submit');
+        submit.addEventListener('contextmenu', (event) => {
+            console.log('clicked');
+        })
+    </script> -->
+
+    <form action="">
+        <button type="submit" class="submit">제출</button>
+    </form>
+
+    <script>
+        const submit = document.querySelector('.submit');
+        submit.addEventListener('click', (event) => {
+            console.log('clicked');
+            event.preventDefault();
+            event.stopPropagation();
+        });
+
+        document.body.addEventListener('click', () => {
+            console.log('event still alive!');
+        }, true);
+    </script>
+
+    <!-- 마우스 오른족 클릭을 제한하는 이벤트 -->
+    <!-- <script>
+        document.addEventListener('contextmenu', () => {
+            alert('해당 페이지에서는 오른쪽 클릭을 제한합니다.');
+            event.preventDefault();
+        })
+    </script> -->
+
+</body>
+
+</html>
