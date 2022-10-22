@@ -82,13 +82,29 @@ console.log(1,
 [10,
 20,
 30]
+{
+    'one' :1,
+    'two' :2,
+    'three' :3
+}
 // 3-3
 let x = 10,
     y = 20,
     z = 30;
 console.log(x, y, z);
-// 3-4 (추가)
-// 3-5 (추가)
+// 3-4
+[1, 2, 3]
+        .map(x=>x*2)
+        .map(x=>x*2)
+        .map(x=>x*2)
+// 3-5
+// error
+// console.log('abc
+//             abc
+//             ')
+console.log(`abc
+            abc
+            `)
 ```
 
 4. 주석
@@ -113,6 +129,19 @@ console.log(x, y, z);
 ```js
 "use strict";
 // 코드
+```
+```html
+<script>
+    "use strict";
+    age = 10; // error
+    console.log(age);
+</script>
+```
+```html
+<script>
+    age = 10; // error 아님!
+    console.log(age);
+</script>
 ```
 
 # 변수
@@ -146,8 +175,8 @@ console.log(x, y, z);
             // 1000줄의 코드
             return x * 1000
         }
-        - 함수 내에서 1000줄의 코드를 쓰고 그 안에 x를 만지고 있다면 봐야하는데 const를 사용하면 그럴 필요가 없음!
         ```
+            - 함수 내에서 1000줄의 코드를 쓰고 그 안에 x를 만지고 있다면 봐야하는데 const를 사용하면 그럴 필요가 없음!
         * DOM을 탐색해야하는 경우 const를 사용하고, (간혹) $를 하는 경우도 있다. 이를 반복문이나 함수 밖에서 주로 사용합니다.
         ```js
         const $helloElement = document.getElementById('hello')
