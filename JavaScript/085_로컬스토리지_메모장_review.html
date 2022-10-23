@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>메모장</title>
+    </head>
+    <body>
+        <hr />
+        <div class="display"></div>
+        <hr />
+        <input class="input" type="text" />
+        <button class="submitButton">Submit</button>
+        <script>
+            const input = document.querySelector(".input");
+            const display = document.querySelector(".display");
+            const button = document.querySelector(".submitButton");
+            const localStotageList = localStorage.getItem("memo") || "[]";
+            let dataArray = JSON.parse(localStotageList);
+
+            const render = () => {
+                localStorage.setItem("memo", JSON.stringify(dataArray));
+                display.innerHTML = dataArray.reduce((acc, e) => {
+                    acc = acc + `<h3>${e}</h3>`;
+                    return acc;
+                }, "");
+            };
+
+            button.onclick = () => {
+                dataArray.push(input.value);
+                render();
+            };
+        </script>
+    </body>
+</html>
