@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const me = {
+        //     name: '웨이드',
+        //     address: '제주도 제주시 인다 1길',
+        //     phoneNum: '010-8001-6536',
+        //     canWalk: function () {
+        //         console.log('웨이드가 걷는다.');
+        //     },
+        //     teaching: function (student) {
+        //         student.levelUp();
+        //     }
+        // }
+
+        // const student = {
+        //     level: 1,
+        //     levelUp: function () {
+        //         this.level++;
+        //     }
+        // }
+
+        // me.teaching(student);
+
+
+        // const you = {
+        //     name: '웨이드',
+        //     address: '제주도 제주시 인다 1길',
+        //     phoneNum: '010-8001-6536',
+        //     canWalk: function () {
+        //         console.log('웨이드가 걷는다.');
+        //     },
+        //     teaching: function (student) {
+        //         student.levelUp();
+        //     }
+        // }
+
+        // function NewFactory(name) {
+        //     this.name = name;
+        //     this.sayYourName = function () {
+        //         console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        //     }
+        // }
+
+
+        // let robot1 = new NewFactory('브랜든');
+
+        // let robot2 = new NewFactory('웨이드');
+
+
+        // function NewFactory(food) {
+        //     this.food = food;
+        //     const chosenFood = food[Math.floor(Math.random() * food.length)]
+        //     this.choice = function () {
+        //         return (`이번에는 ${chosenFood}을 드시면 됩니다.`);
+        //     };
+        // }
+
+        // let whatToEat = new NewFactory(["짜장면", "짬뽕", "탕수육", "깐풍기", "유린기", "볶음밥"]);
+        // let whatToEat2 = new NewFactory(["짜장면", "짬뽕", "탕수육", "깐풍기", "유린기", "볶음밥"]);
+
+        // console.log(whatToEat.choice());
+
+
+
+        function Factory(arr) {
+            const i = Math.floor(Math.random() * arr.length)
+            this.유닛명 = arr[i].유닛
+            this.체력 = arr[i].체력
+            this.공격력 = arr[i].공격력
+        }
+
+        const unit1 = new Factory([{ 유닛: '벌쳐', 체력: 75, 공격력: 20 }, { 유닛: '탱크', 체력: 150, 공격력: 30 }, { 유닛: '골리앗', 체력: 125, 공격력: 12 }])
+        console.log(unit1);
+
+    </script>
+
+</body>
+
+</html>
