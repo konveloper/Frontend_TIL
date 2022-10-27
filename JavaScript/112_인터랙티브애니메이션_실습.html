@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .target {
+            width:100px;
+            height: 100px;
+            background-color:cornflowerblue;
+            margin: 0 auto;
+            transition: 0.2s;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="target"></div>
+
+    <script>
+
+        const target = document.querySelector('.target');
+        let posX = 0;
+        let posY = 0;
+        // 박스 위치를 나타낼 초기값 XY 따로 설정! 값이 변하니까 let
+
+        document.addEventListener('keydown', move);
+        // 우리가 문서 자체에서 키보드를 누르기 때문에 요소에만 넣어주는 게 아니라 도큐먼트 자체에 리벤트 리스너를 넣어준다 
+        // document 문서 자체이고 window는 최상위 객체라 여기선 둘 다 적용해도 괜찮다
+        // 이벤트 리스너에는 두가지 인자가 필수! 이벤트, 리스너 함수(or 핸들러, 콜백함수... 너 어떤 이벤트 넣을거야?)
+
+        // event 이벤트가 일어날 때마다 자동적으로 저장되는 객체! e로도 많이 쓰는데 event 줄임말 
+        // 이벤트 객체는 이벤트가 발생됐을 때 자동으로 리스너 함수의 첫번째 인자로 들어가게 된다
+        // keydown이라면 keydown에 대한 이벤트객체를 가져오고 click이라면 click에 대한 이벤트객체를 가져온다~ 여기선 event에 keydown에 대한 이벤트 객체 들어간다
+        function move(event) {
+            const keyName = event.key;
+            // console.log(keyName);
+            // 현재 무슨 키(프로퍼티)를 사용하는지 키네임에 저장된다 
+            if (keyName === 'ArrowRight') {
+                posX += 20;
+                target.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
+                // 돔에서 선택한 target이라는 애한테 스타일을 줄거야~ 그게 transform이라는 속성이야~ 그 값으로 이걸 넣어줄거야~
+                // xy 둘 다 주는 이유 : y값이 없다면 오른쪽 버튼을 누르고 실수로 위아래 키를 누른다면 초기값으로 돌아가는 불상사 방지
+                // 그러니까 좌우만 하면 X 값만 넣고 상하만 하려면 Y 값만 넣어도 작동되는데 좌우상하 다 움직이려면 XY 다 줘야함 막 움직이여야 하니까 누적된 Y 값도 가져와야함
+            }
+
+            if (keyName === 'ArrowLeft') {
+                posX -= 20;
+                target.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
+            }
+            if (keyName === 'ArrowUp') {
+                posY -= 20;
+                target.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
+            }
+            if (keyName === 'ArrowDown') {
+                posY += 20;
+                target.style.transform = `translateX(${posX}px) translateY(${posY}px)`;
+            }
+        }
+
+    </script>
+</body>
+</html>

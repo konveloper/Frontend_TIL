@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    .target {
+        width:100px;
+        height: 100px;
+        background-color:cornflowerblue;
+        margin: 0 auto;
+        /* 이 함수에서는 움직임이 트랜지션 있으면 오히려 방해됨! */
+    }
+</style>
+<body>
+
+    <div class="target"></div>
+
+    <script>
+
+        const target = document.querySelector('.target');
+        let pos = 0;
+
+        // 사용자가 누르는 키의 상태를 저장하는 객체
+        let keys = {};
+        // ArrowLeft: true; 같이 저장된다 ..?
+
+        function move(event) {
+            keys[event.key] = true;
+        }
+
+        function stop(event) {
+            keys[event.key] = false;
+        }
+
+        document.addEventListener('keydown',move);
+        document.addEventListener('keyup',stop); // 작동 중단 ~
+
+
+        function play() {
+            // console.log('play!'); 작동되는지 확인
+
+            if(keys.ArrowRight) {
+                pos += 2;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+
+            if(keys.ArrowLeft) {
+                pos -= 2;
+                target.style.transform = `translateX(${pos}px)`;
+            }
+
+            window.requestAnimationFrame(play);
+        }
+
+        window.requestAnimationFrame(play);
+
+        // 콜백지옥..!! 근데 안정적이라서 가만히 놔둬도 됨~ 다른 창 갔다가 오면 멈췄다가 다시 실행됨
+        // 게임에선 세계가 계속 살아움직여야하기 때문에 게임 만들때 실행시키는 함수 ... 
+        // 이 함수가 어떤 대상의 정보를 계속 체크할 수 있다는 의미 : 사용자가 이벤트를 발생시켰을 때 보고 있다가 변화가 생기면 바로 대응할 수 있다는 것 
+
+    </script>
+
+</body>
+</html>

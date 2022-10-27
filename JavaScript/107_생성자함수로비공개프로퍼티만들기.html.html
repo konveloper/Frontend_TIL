@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+    </title>
+</head>
+<body>
+    <script>
+        // 클래스 이전에 클로저로 비공개 프로퍼티 만드는 법
+        // 모듈 + 사용자 정의 혼합패턴
+        function Person() {
+            let age = 30; // 비공개 프로퍼티로
+
+            function innerPerson() {}
+
+            innerPerson.prototype.getAge = function () {
+                return age;
+            }
+
+            return innerPerson;
+        }
+
+        const PersonFunc = Person(); // 이거 맞나
+        const person = Person();
+        // innerPerson을 반환해주고 앞에 공간은 사라질 것이다??
+        person //
+        person.getAge(); //
+        person.age(); // undefined
+
+        // IIFE 
+        // (function () {
+        //     console.log('IIFE');
+        // })();
+
+        const NewPerson = (
+            function () {
+                let age = 30;
+
+                function innerPerson() { }
+
+                innerPerson.prototype.getAge = function () {
+                    return age;
+                }
+
+                return innerPerson
+            }
+        )();
+
+        const personWithSecret = new NewPerson();
+
+        // 결론 : 클래스 .. 달달하다 ..
+
+    </script>
+
+</body>
+</html>
