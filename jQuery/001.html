@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>jQuery</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    </head>
+    <body>
+        <h1>hello world!</h1>
+        <p>hello</p>
+        <main>
+            <section>
+                <h2>hello</h2>
+                <p class="main-cont">hello</p>
+            </section>
+        </main>
+        <script>
+            // $(".main-cont").hide();
+
+            // 클릭 자주 사용
+            $("h2").click(function(){
+                alert('클릭');
+            })
+
+            // 자주 사용
+            $("h2").css("color","red");
+
+            // 자주 사용
+            // $(".main-cont").text('hello world')
+
+            // 자주 사용
+            $(".main-cont").html('<strong>hello world</strong>')
+            // 서로 기능을 상호보완했는데 (css 애니메이션이 없었을 때 jQuery가 해줬는데 자스 기능이 좋아졌음) 그러다보니 무거워짐
+            // 결국 업데이트 되다보면 모든 좋은 라이브러리도 비대해지는 시기가 오게 된다
+        </script>
+    </body>
+</html>
