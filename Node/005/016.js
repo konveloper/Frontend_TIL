@@ -11,5 +11,4 @@
 // console.log(all.default())
 
 import d, {a, b, c} from './015.js'
-
 d()
