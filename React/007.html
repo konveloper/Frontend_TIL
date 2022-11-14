@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>리액트 1분만에 추가해보기!</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script
+            src="https://unpkg.com/react@17/umd/react.development.js"
+            crossorigin
+        ></script>
+        <script
+            src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+            crossorigin
+        ></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            const json = [1,2,3,4,5,6,7,8,9]
+
+            function ImageSlide() {
+                return <img src="https://picsum.photos/200/300" />;
+            }
+
+            function Title() {
+                return <h1>Jeju 명소 weniv</h1>;
+            }
+
+            function Info() {
+                return <p>100km 거리</p>;
+            }
+
+            function Price() {
+                return <p>100000</p>;
+            }
+
+            // [<ImageSlide />, <Title />, <Info />, <Price />] //이런 형태로 만들어야 합니다!
+            // 중괄호 안은 자바스크립트로 인식. 맵은 이런 어레이를 생성
+            // 최상위 요소는 하나 묶여있어야 함 여기서는 div
+            const app = (
+                <div>
+                    {
+                        json.map((i) => (
+                            <div>
+                                <ImageSlide />
+                                <Title />
+                                <Info />
+                                <Price />
+                            </div>
+                        ))
+                    }
+                </div>
+            );
+
+            const domContainer = document.querySelector("#root");
+            ReactDOM.render(app, domContainer);
+        </script>
+    </body>
+</html>

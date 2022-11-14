@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>리액트 1분만에 추가해보기!</title>
+    </head>
+    <body>
+        <!-- <div id="root">
+            <main>
+                <header>
+                    <h1>weniv 홈페이지</h1>
+                    <div>메뉴</div>
+                </header>
+                <section>
+                    <p>제품 소개</p>
+                </section>
+                <section>
+                    <p>회사 소개</p>
+                </section>
+                <section>
+                    <p>팀 소개</p>
+                </section>
+                <footer>
+                    <p>회사 정보</p>
+                </footer>
+            </main>
+        </div> -->
+        <div id="root"></div>
+        <script
+            src="https://unpkg.com/react@17/umd/react.development.js"
+            crossorigin
+        ></script>
+        <script
+            src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+            crossorigin
+        ></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+
+            const Header = function(name){
+                return (
+                    <header>
+                    <h1>{name} 홈페이지</h1>
+                    <div>메뉴</div>
+                    </header>
+                )
+            }
+            // name은 인자값! 백틱, 달러 없이 ~
+
+            const Section1 = (
+                <section>
+                    <p>제품 소개</p>
+                </section>
+            )
+
+            const Section2 = (
+                <section>
+                    <p>회사 소개</p>
+                </section>
+            )
+
+            const Section3 = (
+                <section>
+                    <p>팀 소개</p>
+                </section>
+            )
+
+            const Footer = (
+                <footer>
+                    <p>회사 정보</p>
+                </footer>
+            )
+
+            const app = (
+                <main>
+                    {Header("곤")}
+                    {Section1}
+                    {Section2}
+                    {Section3}
+                    {Footer}
+                    {10 + 10}
+                </main>
+            )
+
+            const domContainer = document.querySelector("#root");
+            ReactDOM.render(app, domContainer);
+        </script>
+    </body>
+</html>

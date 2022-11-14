@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>리액트 1분만에 추가해보기!</title>
+    </head>
+    <body>
+        <!-- <div id="root">
+            <main>
+                <header>
+                    <h1>weniv 홈페이지</h1>
+                    <div>메뉴</div>
+                </header>
+                <section>
+                    <p>제품 소개</p>
+                </section>
+                <section>
+                    <p>회사 소개</p>
+                </section>
+                <section>
+                    <p>팀 소개</p>
+                </section>
+                <footer>
+                    <p>회사 정보</p>
+                </footer>
+            </main>
+        </div> -->
+        <div id="root"></div>
+        <script
+            src="https://unpkg.com/react@17/umd/react.development.js"
+            crossorigin
+        ></script>
+        <script
+            src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+            crossorigin
+        ></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+
+            const header = (
+                <header>
+                    <h1>weniv 홈페이지</h1>
+                    <div>메뉴</div>
+                </header>
+            )
+
+            const section1 = (
+                <section>
+                    <p>제품 소개</p>
+                </section>
+            )
+
+            const section2 = (
+                <section>
+                    <p>회사 소개</p>
+                </section>
+            )
+
+            const section3 = (
+                <section>
+                    <p>팀 소개</p>
+                </section>
+            )
+
+            const footer = (
+                <footer>
+                    <p>회사 정보</p>
+                </footer>
+            )
+
+            const app = (
+                <main>
+                    {header}
+                    {section1}
+                    {section2}
+                    {section3}
+                    {footer}
+                    {10 + 10}
+                </main>
+            )
+
+            const domContainer = document.querySelector("#root");
+            ReactDOM.render(app, domContainer);
+        </script>
+    </body>
+</html>
